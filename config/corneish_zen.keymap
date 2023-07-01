@@ -39,7 +39,7 @@
             bindings = <
 &kp ESC    &kp Q  &kp W  &kp F     &kp P       &kp B             &kp J         &kp L           &kp  U     &kp Y    &kp SEMI   &mt RGUI GRAVE 
 &kp TAB    &kp A  &kp R  &kp S     &kp T       &kp G             &kp M         &kp N           &kp  E     &kp I    &kp O      &kp SQT
-&kp LSHFT  &kp Z  &kp X  &kp C     &kp D       &kp V             &kp K         &kp H           &kp COMMA  &kp DOT  &kp FSLH   &RS(ENT)
+&kp LSHFT  &kp Z  &kp X  &kp C     &kp D       &kp V             &kp K         &kp H           &kp COMMA  &kp DOT  &kp FSLH   &kp RS(ENT)
                          &kp LALT  &mo NUMBER  &lt NAV SPACE     &lt SYM BKSP  &mt RSHFT ENT  &kp RCTRL
             >;
         };
@@ -56,7 +56,7 @@
 &kp F7  &kp F8  &kp F9  &kp K_CUT   &none        &kp K_UNDO       &kp PG_UP     &kp HOME   &kp UP     &kp END    &kp INS    &kp DEL
 &kp F4  &kp F5  &kp F6  &kp K_COPY  &kp K_PASTE  &kp K_REDO       &kp PG_DN     &kp LEFT   &kp DOWN   &kp RIGHT  &kp RSHFT  &kp RGUI
 &kp F1  &kp F2  &kp F3  &kp F10     &kp F11      &kp F12          &none         &none      &none      &none      &kp RCTRL  &kp RALT
-                        &none       &none        &trans           &lt SYM BKSP  &RC(RALT)  &RA(RSHFT)
+                        &none       &none        &trans           &lt SYM BKSP  &kp RC(RALT)  &kp RA(RSHFT)
             >;
         };
 
