@@ -35,7 +35,7 @@
 // | TAB/CAPS |  A  |  R  |  S  |  T  |    G    ||     M    |    N    |  E   |  I  |  O  |    '    |
 // |   CTRL   |  Z  |  X  |  C  |  D  |    V    ||     K    |    H    |  ,   |  .  |  /  | SFT-ENT |
 //                        | ALT | NUM | SPC/NAV || BKSP/SYM | ENT/SFT | CTRL |
-                                          \----SYSM----/
+//                                         \----SYSM----/
             bindings = <
 &kp ESC    &kp Q  &kp W  &kp F     &kp P       &kp B             &kp J         &kp L           &kp  U     &kp Y    &kp SEMI   &mt RGUI GRAVE 
 &kp TAB    &kp A  &kp R  &kp S     &kp T       &kp G             &kp M         &kp N           &kp  E     &kp I    &kp O      &kp SQT
@@ -51,6 +51,7 @@
 // | F4 | F5 | F6 | COPY | PASTE | REDO ||   PGDN   |    LFT   |    DWN   | RGT | SFT  | GUI |
 // | F1 | F2 | F3 | F10  |  F11  | F12  ||          |          |          |     | CTRL | ALT |
 //                |      |       | HELD || BKSP/SYM | CTRL-ALT | ALT-SHFT |
+
             bindings = <
 &kp F7  &kp F8  &kp F9  &kp K_CUT   &none        &kp K_UNDO       &kp PG_UP     &kp HOME   &kp UP     &kp END    &kp INS    &kp DEL
 &kp F4  &kp F5  &kp F6  &kp K_COPY  &kp K_PASTE  &kp K_REDO       &kp PG_DN     &kp LEFT   &kp DOWN   &kp RIGHT  &kp RSHFT  &kp RGUI
@@ -66,6 +67,7 @@
 // | CTRL |  *  |  ^  |  <  |  >   |    &    ||  +   |   [  |  ] |    |  \  |  `   |
 // | SHFT |     |     |     |      |   "|"   ||  -   |   {  |  } |    |  /  |  ~   |
 //                    | GUI |      | SPC/NAV || HELD |      |    |
+
             bindings = <
 &kp TAB   &kp EXCL   &kp AT     &kp HASH  &kp DLLR &kp PRCNT      &kp EQUAL &kp LPAR  &kp RPAR  &none &kp UNDS &kp BSPC
 &kp LCTRL &kp ASTRK  &kp CARET  &kp LT    &kp GT   &kp AMPS       &kp PLUS  &kp LBKT  &kp RBKT  &none &kp BSLH &kp GRAVE
@@ -81,6 +83,7 @@
 // | CTRL |  !  |  @  |  #  |  $   |  %  ||  +  |  4  |  5  |  6  |  \  |  *   |
 // | SHFT |     |     |     |      |     ||  -  |  1  |  2  |  3  | "|" |      |
 //                    |     | HELD |     ||  =  |  ^  |     |
+
             bindings = <
 &kp  TAB  &kp N1 &kp N2  &kp N3    &kp N4   &kp N5       &kp N6    &kp N7  &kp N8  &kp N9 &kp N0   &kp BSPC
 &kp LCTRL &EXCL  &kp AT  &kp HASH  &kp DLLR &kp PRCNT    &kp MINUS &kp N4  &kp N5  &kp N6 &kp BSLH &kp ASTRK
