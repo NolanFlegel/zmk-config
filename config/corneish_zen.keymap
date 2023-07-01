@@ -39,8 +39,8 @@
             bindings = <
 &kp ESC    &kp Q  &kp W  &kp F     &kp P       &kp B             &kp J         &kp L           &kp  U     &kp Y    &kp SEMI   &mt RGUI GRAVE 
 &kp TAB    &kp A  &kp R  &kp S     &kp T       &kp G             &kp M         &kp N           &kp  E     &kp I    &kp O      &kp SQT
-&kp LSHFT  &kp Z  &kp X  &kp C     &kp D       &kp V             &kp K         &kp H           &kp COMMA  &kp DOT  &kp FSLH   &kp RS(ENT)
-                         &kp LALT  &mo NUMBER  &lt NAV SPACE     &lt SYM BKSP  &mt RSHFT ENT  &kp RCTRL
+&kp LSHFT  &kp Z  &kp X  &kp C     &kp D       &kp V             &kp K         &kp H           &kp COMMA  &kp DOT  &kp FSLH   &kp RS(ENTER)
+                         &kp LALT  &mo NUMBER  &lt NAV SPACE     &lt SYM BKSP  &mt RSHFT ENTER &kp RCTRL
             >;
         };
 
@@ -116,10 +116,10 @@
 //                    | ALT | NUM | SPC/NAV || BKSP/SYM | ENT/SFT | CTRL |
 //                                    \----SYSM----/
                         bindings = <
-   &kp TAB   &kp Q &kp W &kp E &kp R &kp T    &kp Y &kp U  &kp I     &kp O   &kp P    &kp BSPC
-   &kp LSHFT &kp A &kp S &kp D &kp F &kp G    &kp H &kp J  &kp K     &kp L   &kp SEMI &kp SQT
-   &kp LCTRL &kp Z &kp X &kp C &kp V &kp B    &kp N &kp M  &kp COMMA &kp DOT &kp FSLH &kp LGUI
-            &kp LALT  &mo NUMBER  &lt NAV SPACE     &lt SYM BKSP  &mt RSHFT ENT  &kp RCTRL
+   &kp TAB   &kp Q &kp W &kp E &kp R &kp T    &kp Y &kp U  &kp I     &kp O         &kp P    &kp BSPC
+   &kp LSHFT &kp A &kp S &kp D &kp F &kp G    &kp H &kp J  &kp K     &kp L         &kp SEMI &kp SQT
+   &kp LCTRL &kp Z &kp X &kp C &kp V &kp B    &kp N &kp M  &kp COMMA &kp DOT       &kp FSLH &kp LGUI
+            &kp LALT  &mo NUMBER  &lt NAV SPACE     &lt SYM BKSP  &mt RSHFT ENTER  &kp RCTRL
                         >;
                 };
     };
