@@ -69,7 +69,7 @@
 //                    | GUI |      | SPC/NAV || HELD |      |    |
 
             bindings = <
-&kp TAB   &kp EXCL   &kp AT     &kp HASH  &kp DLLR &kp PRCNT      &kp EQUAL &kp LPAR  &kp RPAR  &none &kp UNDS &kp BSPC
+&kp TAB   &kp EXCL   &kp AT     &kp HASH  &kp DLLR &kp PRCNT      &kp EQUAL &kp LPAR  &kp RPAR  &none &kp UNDER &kp BSPC
 &kp LCTRL &kp ASTRK  &kp CARET  &kp LT    &kp GT   &kp AMPS       &kp PLUS  &kp LBKT  &kp RBKT  &none &kp BSLH &kp GRAVE
 &kp LSHFT &none      &none      &none     &none    &kp PIPE       &kp MINUS &kp LBRC  &kp RBRC  &none &kp FSLH &kp TILDE
                                 &kp LGUI  &none    &lt NAV SPACE  &trans    &none     &none
