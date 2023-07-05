@@ -48,13 +48,13 @@
             label = "NAV";
 // -----------------------------------------------------------------------------------------
 // | F7 | F8 | F9 | CUT  |       | UNDO ||   PGUP   |    HM    |    UP    | END | INS  | DEL |
-// | F4 | F5 | F6 | COPY | PASTE | REDO ||   PGDN   |    LFT   |    DWN   | RGT | SFT  | GUI |
+// | F4 | F5 | F6 | COPY | PASTE | REDO ||   PGDN   |    LFT   |    DWN   | RGT | SFT  | META |
 // | F1 | F2 | F3 | F10  |  F11  | F12  ||          |          |          |     | CTRL | ALT |
 //                |      |       | HELD || SPC/SYM | CTRL-ALT | ALT-SHFT |
 
             bindings = <
-&kp F7  &kp F8  &kp F9  &kp K_CUT   &kp K_UNDO   &kp RC(Z)       &kp PG_UP     &kp HOME   &kp UP     &kp END    &kp INS    &kp DEL
-&kp F4  &kp F5  &kp F6  &kp K_COPY  &kp K_PASTE  &kp RC(Y)       &kp PG_DN     &kp LEFT   &kp DOWN   &kp RIGHT  &kp RSHFT  &kp RGUI
+&kp F7  &kp F8  &kp F9  &kp RC(X)   &none        &kp RC(Z)       &kp PG_UP     &kp HOME   &kp UP     &kp END    &kp INS    &kp DEL
+&kp F4  &kp F5  &kp F6  &kp RC(C)   &kp RC(V)    &kp RC(Y)       &kp PG_DN     &kp LEFT   &kp DOWN   &kp RIGHT  &kp RSHFT  &kp RMETA
 &kp F1  &kp F2  &kp F3  &kp F10     &kp F11      &kp F12          &none         &none      &none      &none      &kp RCTRL  &kp RALT
                         &none       &none        &trans           &lt SYMBOL SPACE  &kp RC(RALT)  &kp RA(RSHFT)
             >;
@@ -66,13 +66,13 @@
 // |  TAB |  !  |  @  |  #  |  $   |    %     ||  =   |   (  |  ) |    |  _  | BKSP |
 // | CTRL |  *  |  ^  |  <  |  >   |    &     ||  +   |   [  |  ] |    |  \  |  `   |
 // | SHFT |     |     |  _  |  -   |   "|"    ||  -   |   {  |  } |    |  /  |  ~   |
-//                    | GUI |      | BKSP/NAV || HELD |      |    |
+//                    | META |      | BKSP/NAV || HELD |      |    |
 
             bindings = <
 &kp TAB   &kp EXCL   &kp AT     &kp HASH  &kp DLLR  &kp PRCNT      &kp EQUAL &kp LPAR  &kp RPAR  &none &kp UNDER &kp BSPC
 &kp LCTRL &kp ASTRK  &kp CARET  &kp LT    &kp GT    &kp AMPS       &kp PLUS  &kp LBKT  &kp RBKT  &none &kp BSLH &kp GRAVE
 &kp LSHFT &none      &none      &kp UNDER &kp MINUS &kp PIPE       &kp MINUS &kp LBRC  &kp RBRC  &none &kp FSLH &kp TILDE
-                                &kp LGUI  &none    &lt NAV BKSP  &trans    &none     &none
+                                &kp LMETA  &none    &lt NAV BKSP  &trans    &none     &none
             >;
         };
 
@@ -112,13 +112,13 @@
 // -----------------------------------------------------------------------------------------
 // | TAB  |  Q  |  W  |  E  |  R  |     T    ||    Y     |    U    |  I   |  O  |  P  | BSPC |
 // | SHFT |  A  |  S  |  D  |  F  |     G    ||    H     |    J    |  K   |  L  |  ;  |  '   |
-// | CTRL |  Z  |  X  |  C  |  V  |     B    ||    N     |    M    |  ,   |  .  |  /  | GUI  |
+// | CTRL |  Z  |  X  |  C  |  V  |     B    ||    N     |    M    |  ,   |  .  |  /  | META  |
 //                    | ALT | NUM | BKSP/NAV ||  SPC/SYM | ENT/SFT | CTRL |
 //                                    \----SYSM----/
                         bindings = <
    &kp TAB   &kp Q &kp W &kp E &kp R &kp T    &kp Y &kp U  &kp I     &kp O         &kp P    &kp BSPC
    &kp LSHFT &kp A &kp S &kp D &kp F &kp G    &kp H &kp J  &kp K     &kp L         &kp SEMI &kp SQT
-   &kp LCTRL &kp Z &kp X &kp C &kp V &kp B    &kp N &kp M  &kp COMMA &kp DOT       &kp FSLH &kp LGUI
+   &kp LCTRL &kp Z &kp X &kp C &kp V &kp B    &kp N &kp M  &kp COMMA &kp DOT       &kp FSLH &kp LMETA
             &kp LALT  &mo NUMBER  &lt NAV SPACE     &lt SYMBOL SPACE  &mt RSHFT ENTER  &kp RCTRL
                         >;
                 };
