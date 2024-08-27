@@ -103,7 +103,7 @@
 &none      &none        &none        &none        &none        &none         &kp C_VOL_DN  &kp C_VOL_UP  &kp C_MUTE  &none &to COLEMAK &to NUMBER
 &bt BT_CLR  &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4  &kp C_BRI_DN  &kp C_BRI_UP  &kp C_PP    &none &to NAV     &to SYMBOL
 &none       &none        &none        &none        &none        &none         &none   &none   &none &none                   &to SYSTEM  &to GAMING
-                                      &none        &none        &none         &none   &none   &mo 1
+                                      &bt BT_CLR_ALL       &none        &none         &none   &none   &mo 1
             >;
         };
 
