@@ -1,0 +1,135 @@
+/*
+*
+* Copyright (c) 2021 Darryl deHaan
+* SPDX-License-Identifier: MIT
+*
+*/
+
+#include <behaviors.dtsi>
+#include <dt-bindings/zmk/keys.h>
+#include <dt-bindings/zmk/bt.h>
+
+#define COLEMAK 0
+#define NAV     1
+#define SYMBOL  2
+#define NUMBER  3
+#define SYSTEM  4
+#define GAMING  5
+
+
+/ {
+    chosen {
+        zmk,matrix_transform = &default_transform;
+        // zmk,matrix_transform = &five_column_transform;
+    };
+};
+
+/ {
+    keymap {
+        compatible = "zmk,keymap";
+
+        colemak {
+            label = "COLEMAK";
+// --------------------------------------------------------------------------------
+// |   ESC    |  Q  |  W  |  F  |  P  |    B     ||     J    |    L    |  U   |  Y  |  ;  |  BKSP   |
+// | TAB/CAPS |  A  |  R  |  S  |  T  |    G     ||     M    |    N    |  E   |  I  |  O  |    '    |
+// |   CTRL   |  Z  |  X  |  C  |  D  |    V     ||     K    |    H    |  ,   |  .  |  /  | SFT-ENT |
+//                        | ALT | NUM | BKSP/NAV || SPC/SYM | ENT/SFT | CTRL |
+//                                         \----SYSM----/
+            bindings = <
+&kp ESC    &kp Q  &kp W  &kp F     &kp P       &kp B             &kp J         &kp L           &kp  U     &kp Y    &kp SEMI   &kp BKSP
+&kp TAB    &kp A  &kp R  &kp S     &kp T       &kp G             &kp M         &kp N           &kp  E     &kp I    &kp O      &kp SQT
+&kp LSHFT  &kp Z  &kp X  &kp C     &kp D       &kp V             &kp K         &kp H           &kp COMMA  &kp DOT  &kp FSLH   &kp RS(ENTER)
+                         &kp LALT  &mo NUMBER  &lt NAV BKSP     &lt SYMBOL SPACE  &mt RSHFT ENTER &kp RCTRL
+            >;
+        };
+
+        nav {
+            label = "NAV";
+// -----------------------------------------------------------------------------------------
+// | F7 | F8 | F9 | CUT  |       | UNDO ||   PGUP   |    HM    |    UP    | END | INS  | DEL |
+// | F4 | F5 | F6 | COPY | PASTE | REDO ||   PGDN   |    LFT   |    DWN   | RGT | SFT  | META |
+// | F1 | F2 | F3 | F10  |  F11  | F12  ||          |          |          |     | CTRL | ALT |
+//                |      |       | HELD || SPC/SYM | CTRL-ALT | ALT-SHFT |
+
+            bindings = <
+&kp F7  &kp F8  &kp F9  &kp RC(X)   &none        &kp RC(Z)       &kp PG_UP     &kp HOME   &kp UP     &kp END    &kp INS    &kp DEL
+&kp F4  &kp F5  &kp F6  &kp RC(C)   &kp RC(V)    &kp RC(Y)       &kp PG_DN     &kp LEFT   &kp DOWN   &kp RIGHT  &kp RSHFT  &kp RMETA
+&kp F1  &kp F2  &kp F3  &kp F10     &kp F11      &kp F12          &none         &none      &none      &none      &kp RCTRL  &kp RALT
+                        &none       &none        &trans           &lt SYMBOL SPACE  &kp RC(RALT)  &kp RA(RSHFT)
+            >;
+        };
+
+        sym {
+            label = "SYMBOL";
+// -----------------------------------------------------------------------------------------
+// |  TAB |  !  |  @  |  #  |  $   |    %     ||  =   |   (  |  ) |    |  _  | BKSP |
+// | CTRL |  *  |  ^  |  <  |  >   |    &     ||  +   |   [  |  ] |    |  \  |  `   |
+// | SHFT |     |     |  _  |  -   |   "|"    ||  -   |   {  |  } |    |  /  |  ~   |
+//                    | META |      | BKSP/NAV || HELD |      |    |
+
+            bindings = <
+&kp TAB   &kp EXCL   &kp AT     &kp HASH  &kp DLLR  &kp PRCNT      &kp EQUAL &kp LPAR  &kp RPAR  &none &kp UNDER &kp BSPC
+&kp LCTRL &kp ASTRK  &kp CARET  &kp LT    &kp GT    &kp AMPS       &kp PLUS  &kp LBKT  &kp RBKT  &none &kp BSLH &kp GRAVE
+&kp LSHFT &none      &none      &kp UNDER &kp MINUS &kp PIPE       &kp MINUS &kp LBRC  &kp RBRC  &none &kp FSLH &kp TILDE
+                                &kp LMETA  &none    &lt NAV BKSP  &trans    &none     &none
+            >;
+        };
+
+        number {
+            label = "NUMBER";
+// -----------------------------------------------------------------------------------------
+// |  TAB |  1  |  2  |  3  |  4   |  5  ||  6  |  7  |  8  |  9  |  0  | BKSP |
+// | CTRL |  !  |  @  |  #  |  $   |  %  ||  +  |  4  |  5  |  6  |  \  |  *   |
+// | SHFT |     |     |     |      |     ||  -  |  1  |  2  |  3  | "|" |      |
+//                    |SYSM | HELD |     ||  =  |  ^  |     |
+
+            bindings = <
+&kp  TAB  &kp N1 &kp N2  &kp N3    &kp N4   &kp N5       &kp N6    &kp N7  &kp N8  &kp N9 &kp N0   &kp BSPC
+&kp LCTRL &kp EXCL  &kp AT  &kp HASH  &kp DLLR &kp PRCNT    &kp MINUS &kp N4  &kp N5  &kp N6 &kp BSLH &kp ASTRK
+&kp LSHFT &none  &none   &none     &none    &none        &kp UNDER &kp N1  &kp N2  &kp N3 &kp PIPE &none
+                        &to SYSTEM &trans    &none    &kp EQUAL &none   &none
+            >;
+        };
+
+        sysm {
+            label = "SYSTEM";
+// -----------------------------------------------------------------------------------------
+// | RESET |     |     |     |     |     || VLDN  | VLUP  | MUTE  |     | "COLEMAK" | "NUMS"   |
+// | BTCLR | BT1 | BT2 | BT3 | BT4 | BT5 || BR_DN | BR_UP | PAUSE |     | "NAV"     | "SYM"    |
+// |       |     |     |     |     |     ||       |       |       |     | "SYSM"    | "GAMING" |
+//                     |     |     |     ||       |       |       |
+            bindings = <
+&none      &none        &none        &none        &none        &none         &kp C_VOL_DN  &kp C_VOL_UP  &kp C_MUTE  &none &to COLEMAK &to NUMBER
+&bt BT_CLR  &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4  &kp C_BRI_DN  &kp C_BRI_UP  &kp C_PP    &none &to NAV     &to SYMBOL
+&none       &none        &none        &none        &none        &none         &none   &none   &none &none                   &to SYSTEM  &to GAMING
+                                      &bt BT_CLR_ALL       &none        &none         &none   &none   &mo 1
+            >;
+        };
+
+        gaming {
+                label = "GAMING";
+// -----------------------------------------------------------------------------------------
+// | TAB  |  Q  |  W  |  E  |  R  |     T    ||    Y     |    U    |  I   |  O  |  P  | BSPC |
+// | SHFT |  A  |  S  |  D  |  F  |     G    ||    H     |    J    |  K   |  L  |  ;  |  '   |
+// | CTRL |  Z  |  X  |  C  |  V  |     B    ||    N     |    M    |  ,   |  .  |  /  | META  |
+//                    | ALT | NUM | BKSP/NAV ||  SPC/SYM | ENT/SFT | CTRL |
+//                                    \----SYSM----/
+                        bindings = <
+   &kp TAB   &kp Q &kp W &kp E &kp R &kp T    &kp Y &kp U  &kp I     &kp O         &kp P    &kp BSPC
+   &kp LSHFT &kp A &kp S &kp D &kp F &kp G    &kp H &kp J  &kp K     &kp L         &kp SEMI &kp SQT
+   &kp LCTRL &kp Z &kp X &kp C &kp V &kp B    &kp N &kp M  &kp COMMA &kp DOT       &kp FSLH &kp LMETA
+            &kp LALT  &mo NUMBER  &lt NAV SPACE     &lt SYMBOL SPACE  &mt RSHFT ENTER  &kp RCTRL
+                        >;
+                };
+    };
+};
+/ {
+    conditional_layers {
+        compatible = "zmk,conditional-layers";
+        tri_layer {
+            if-layers = <1 2>;
+            then-layer = <4>;
+        };
+    };
+};
