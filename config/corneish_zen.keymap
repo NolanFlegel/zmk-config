@@ -10,8 +10,8 @@
 #include <dt-bindings/zmk/bt.h>
 
 #define BASE    0
-#define NAV     1
-#define SYMBOL  2
+#define SYMBOL  1
+#define NAV     2
 #define NUMBER  3
 #define SYSTEM  4
 
@@ -28,16 +28,16 @@
         base_layer {
             display-name = "COLEMAK";
 // --------------------------------------------------------------------------------
-// | ESC  |  Q  |  W  |  F  |  P  |    B     ||     J   |  L   |  U  |  Y  |  ;  | BKSP |
-// | TAB  |  A  |  R  |  S  |  T  |    G     ||     M   |  N   |  E  |  I  |  O  |   '  |
-// | CTRL |  Z  |  X  |  C  |  D  |    V     ||     K   |  H   |  ,  |  .  |  /  | CTRL |
-//                    | NUM | ENT | BKSP/NAV || SPC/SYM | SHFT | ALT |
+// | ESC  |  Q  |  W  |  F  |  P  |    B     ||     J   |  L   |  U   |  Y  |  ;  | BKSP |
+// | TAB  |  A  |  R  |  S  |  T  |    G     ||     M   |  N   |  E   |  I  |  O  |   '  |
+// | CTRL |  Z  |  X  |  C  |  D  |    V     ||     K   |  H   |  ,   |  .  |  /  | ALT |
+//                    | NUM | ENT | BKSP/NAV || SPC/SYM | SHFT | CTRL |
 
             bindings = <
-&kp ESC   &kp Q &kp W &kp F &kp P &kp B      &kp J &kp L &kp U &kp Y &kp SEMI &kp BKSP
-&kp TAB   &kp A &kp R &kp S &kp T &kp G      &kp M &kp N &kp E &kp I &kp O &kp SQT
-&kp LCTRL &kp Z &kp X &kp C &kp D &kp V      &kp K &kp H &kp COMMA &kp DOT &kp FSLH &kp RCTRL
-         &mo NUMBER &kp ENTER &lt NAV BKSP      &lt SYMBOL SPACE &kp RSHFT &kp RALT
+&kp ESC   &kp Q &kp W &kp F &kp P &kp B         &kp J &kp L &kp U &kp Y &kp SEMI &kp BKSP
+&kp TAB   &kp A &kp R &kp S &kp T &kp G         &kp M &kp N &kp E &kp I &kp O &kp SQT
+&kp LCTRL &kp Z &kp X &kp C &kp D &kp V         &kp K &kp H &kp COMMA &kp DOT &kp FSLH &kp RALT
+         &mo NUMBER &kp ENTER &lt NAV BKSP      &lt SYMBOL SPACE &kp RSHFT &kp RCTRL
             >;
         };
 
@@ -46,46 +46,46 @@
 // -----------------------------------------------------------------------------------------
 // | ESC  |  '  |  <  |  >   |  "  |  `   ||  &   |  _  |  [  |  ]  |  %  | BKSP |
 // | TAB  |  !  |  -  |  +   |  =  |  #   || '|'  |  :  |  (  |  )  |  ;  |  "   |
-// | STAB |  ^  |  /  |  *   |  \  |  @   ||  ~   |  $  |  {  |  }  |  ?  |      |
-//                    | META |     | CTRL || HELD |     |     |
+// | STAB |  ^  |  /  |  *   |  \  |  @   ||  ~   |  $  |  {  |  }  |  ?  | ALT  |
+//                    | META |     | CTRL || HELD |     | CTRL |
 
             bindings = <
 &kp ESC &kp SQT &kp LT &kp GT &kp DQT &kp GRAVE             &kp AMPS &kp UNDER &kp LBKT &kp RBKT &kp PRCNT &kp BSPC
 &kp TAB &kp EXCL &kp MINUS &kp PLUS &kp EQUAL &kp HASH      &kp PIPE &kp COLON &kp LPAR &kp RPAR &kp SEMI &kp DQT
-&kp LS(TAB) &kp CARET &kp FSLH &kp STAR &kp BSLH &kp AT     &kp TILDE &kp DLLR &kp LBRC &kp RBRC &kp QMARK &none
-                              &kp LMETA &none &kp LCTRL     &trans &none &none
+&kp LS(TAB) &kp CARET &kp FSLH &kp STAR &kp BSLH &kp AT     &kp TILDE &kp DLLR &kp LBRC &kp RBRC &kp QMARK &kp RALT
+                              &kp LMETA &none &kp LCTRL     &trans &none &kp RCTRL
             >;
         };
 
         nav_layer {
             display-name = "NAV";
 // -----------------------------------------------------------------------------------------
-// | ESC   |    |     | CUT  |       | UNDO || PGUP |  HM  | UP  | END | INS   | DEL   |
-// |       |    | SFT | COPY | PASTE | REDO || PGDN |  LFT | DWN | RGT |       |       |
-// | BTCLR | BT1| BT2 | BT3  | BT4   |      ||      |      |     |     | C/ALT | S/ALT |
-//                    |      |       | HELD || GUI  | CTRL | ALT |
+// | ESC   |    |     | CUT  |       | UNDO || PGUP | HM  | UP   | END | INS   | DEL   |
+// |       |    | SFT | COPY | PASTE | REDO || PGDN | LFT | DWN  | RGT |       |       |
+// | BTCLR | BT1| BT2 | BT3  | BT4   |      ||      |     |      |     | C/ALT | S/ALT |
+//                    |      |       | HELD || GUI  | ALT | CTRL |
 
             bindings = <
 &kp ESC &none &none &kp RC(X) &none &kp RC(Z)           &kp PG_UP &kp HOME &kp UP &kp END &kp INS &kp DEL
 &none &none &kp LSHFT &kp RC(C) &kp RC(V) &kp RC(Y)     &kp PG_DN &kp LEFT &kp DOWN &kp RIGHT &none &none
 &bt BT_CLR &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4 &none &none &none &none &none &none &kp RC(RALT) &kp RS(RALT)
-                            &none &none &trans          &kp RGUI &kp RCTRL &kp RALT
+                            &none &none &trans          &kp RGUI &kp RALT &kp RCTRL
             >;
         };
 
         number_layer {
             display-name = "NUMBER";
 // -----------------------------------------------------------------------------------------
-// | ESC  | F12 | F7 | F8 | F9 |   ||  +  |  7   |  8  |  9  | * | DEL |
-// | TAB  | F11 | F4 | F5 | F6 |   ||  -  |  4   |  5  |  6  | / | '|' |
-// | SHFT | F10 | F1 | F2 | F3 |   ||  =  |  1   |  2  |  3  | 0 |     |
-//                   |HELD|    |   || GUI | CTRL | ALT |
+// | ESC  | F12 | F7 | F8 | F9 |   ||  +  |  7  |  8   |  9  | * | DEL |
+// | TAB  | F11 | F4 | F5 | F6 |   ||  -  |  4  |  5   |  6  | / | '|' |
+// | SHFT | F10 | F1 | F2 | F3 |   ||  =  |  1  |  2   |  3  | 0 |     |
+//                   |HELD|    |   || GUI | ALT | CTRL |
 
             bindings = <
 &kp ESC &kp F12 &kp F7 &kp F8 &kp F9 &none      &kp PLUS &kp N7 &kp N8 &kp N9 &kp STAR &kp DEL
 &kp TAB &kp F11 &kp F4 &kp F5 &kp F6 &none      &kp MINUS &kp N4 &kp N5 &kp N6 &kp BSLH &kp PIPE
 &kp LSHFT &kp F10 &kp F1 &kp F2 &kp F3 &none    &kp EQUAL &kp N1 &kp N2 &kp N3 &kp N0 &none
-                        &trans &none &none      &kp RGUI &kp RCTRL &kp RALT
+                        &trans &none &none      &kp RGUI &kp RALT &kp RCTRL
             >;
         };
     };
