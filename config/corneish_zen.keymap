@@ -28,16 +28,16 @@
         base_layer {
             display-name = "COLEMAK";
 // --------------------------------------------------------------------------------
-// | ESC  |  Q  |  W  |   F   |  P  |    B     ||     J   |  L   |  U  |  Y  |  ;  | BKSP |
-// | TAB  |  A  |  R  |   S   |  T  |    G     ||     M   |  N   |  E  |  I  |  O  |   '  |
-// | CTRL |  Z  |  X  |   C   |  D  |    V     ||     K   |  H   |  ,  |  .  |  /  | ALT |
-//                    | C-SFT | NUM | NAV/BKSP || SYM/SPC | SHFT | CTRL |
+// | ESC  |  Q  |  W  |  F  |  P  |    B     ||     J   |  L   |  U  |  Y  |  ;  | BKSP |
+// | TAB  |  A  |  R  |  S  |  T  |    G     ||     M   |  N   |  E  |  I  |  O  |   '  |
+// | CTRL |  Z  |  X  |  C  |  D  |    V     ||     K   |  H   |  ,  |  .  |  /  | ENTER |
+//                    | GUI | NUM | NAV/BKSP || SYM/SPC | SHFT | ALT |
 
             bindings = <
 &kp ESC &kp Q &kp W &kp F &kp P &kp B          &kp J &kp L &kp U &kp Y &kp SEMI &kp BKSP
 &kp TAB &kp A &kp R &kp S &kp T &kp G          &kp M &kp N &kp E &kp I &kp O &kp SQT
-&kp LCTRL &kp Z &kp X &kp C &kp D &kp V        &kp K &kp H &kp COMMA &kp DOT &kp FSLH &kp RALT
-    &kp LC(LSHFT) &mo NUMBER &lt NAV BKSP      &lt SYMBOL SPACE &kp RSHFT &kp RCTRL
+&kp LCTRL &kp Z &kp X &kp C &kp D &kp V        &kp K &kp H &kp COMMA &kp DOT &kp FSLH &kp ENTER
+        &kp LGUI &mo NUMBER &lt NAV BKSP       &lt SYMBOL SPACE &kp RSHFT &kp RCTRL
             >;
         };
 
