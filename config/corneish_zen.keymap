@@ -60,17 +60,16 @@
         nav_layer {
             display-name = "NAV";
 // -----------------------------------------------------------------------------------------
-// | ESC   | CAPS |     | CUT  |       | UNDO || PGUP | HM  | UP  | END | INS   | DEL   |
-// |       |      | SFT | COPY | PASTE | REDO || PGDN | LFT | DWN | RGT |       |       |
-// | BTCLR | BT0  | BT1 | BT2  | BT3   | BT4  ||      |     |     |     | C/ALT | S/ALT |
-//                      |      |       | HELD || GUI  | CTRL| ALT |
+// | ESC | CAPS |     | CUT  |       | UNDO || PGUP | HM  | UP  | END |       | DEL   |
+// |     |      | SFT | COPY | PASTE | REDO || PGDN | LFT | DWN | RGT |       |  INS  |
+// | BT0 | BT1  | BT2 |      |       |      ||      |     |     |     | C/ALT | S/ALT |
+//                    | BTCLR|       | HELD || GUI  | CTRL| ALT |
 
             bindings = <
-&kp ESC &kp CAPS &none &kp RC(X) &none &kp RC(Z)        &kp PG_UP &kp HOME &kp UP &kp END &kp INS &kp DEL
-&none &none &kp LSHFT &kp RC(C) &kp RC(V) &kp RC(Y)     &kp PG_DN &kp LEFT &kp DOWN &kp RIGHT &none &none
-&bt BT_CLR &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 
-&bt BT_SEL 3 &bt BT_SEL 4                               &none &none &none &none &kp RC(RALT) &kp RS(RALT)
-                            &none &none &trans          &kp RGUI &kp RCTRL &kp RALT
+&kp ESC &kp CAPS &none &kp RC(X) &none &kp RC(Z)            &kp PG_UP &kp HOME &kp UP &kp END &none &kp DEL
+&none &none &kp LSHFT &kp RC(C) &kp RC(V) &kp RC(Y)         &kp PG_DN &kp LEFT &kp DOWN &kp RIGHT &none &kp INS
+&bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &none &none &none    &none &none &none &none &kp RC(RALT) &kp RS(RALT)
+                                &bt BT_CLR &none &trans     &kp RGUI &kp RCTRL &kp RALT
             >;
         };
 
